@@ -1,62 +1,73 @@
+import java.util.Scanner;
 
 public class tv {
 	boolean flag;
-	int volumeUp;
-	int volumeDown;
-	int channelUp;
-	int channelDown;
-	String response = null;
-	public tv(boolean flag, int volumeUp, int volumeDown, int channelUp, int ch) {
-		super();
-		this.flag = flag;
-		this.volumeUp = volumeUp;
-		this.volumeDown = volumeDown;
-		this.channelUp = channelUp;
-		this.channelDown = channelDown;
-	}
+	int volume;
+	int channel;
+	Scanner res=new Scanner(System.in);
+	String response=res.next();
 	public boolean isFlag() {
 		return flag;
 	}
 	public void setFlag(boolean flag) {
 		this.flag = flag;
 	}
-	public int getVolumeUp() {
-		return volumeUp;
+	public int getVolume() {
+		return volume;
 	}
-	public void setVolumeUp(int volumeUp) {
-		this.volumeUp = volumeUp;
+	public void setVolume(int volume) {
+		this.volume = volume;
 	}
-	public int getVolumeDown() {
-		return volumeDown;
+	public int getChannel() {
+		return channel;
 	}
-	public void setVolumeDown(int volumeDown) {
-		this.volumeDown = volumeDown;
+	
+	public void setChannel(int channel) {
+		this.channel = channel;
 	}
-	public int getChannelUp() {
-		return channelUp;
-	}
-	public void setChannelUp(int channelUp) {
-		this.channelUp = channelUp;
-	}
-	public int getChannelDown() {
-		return channelDown;
-	}
-	public void setChannelDown(int channelDown) {
-		this.channelDown = channelDown;
-	}
-	 public boolean switchOnOff(boolean flag) {
-		System.out.println("Turn lights on (y/n)?");
+	 public boolean switchOnOffTV() {
+		System.out.println("Turn tv on (y/n)?");
+		if(response=="y") {
+			System.out.println("Tv is on");
+			return flag=true;
+		}
+			
+		else{
+			System.out.println("Tv is off");
+			return flag=false;
+		}
 		 
 	 }
-	 public boolean putOff(boolean flag) {
-			return flag=false;
-			 
-	}
-	public int changeChannel(int channelUp,int channelDown) {
+	
+	public int changeChannel(int channel) {
 		System.out.println("Change channel up? (y/n)?");
-		if(response=="y") 
-			return channelUp;
-		else
-			return channelDown;
+		if(response=="y") {
+			channel++;
+			System.out.println("channel increased");
+			return channel;
+		}
+			
+		else {
+			channel--;
+			System.out.println("channel decreased");
+			return channel;
+		}
+			
+	}
+	
+	public int changeVolume(int volume) {
+		System.out.println("Change volume up? (y/n)?");
+		if(response=="y") {
+			volume++;
+			System.out.println("Volume is increased");
+			return volume;
+		}
+			
+		else {
+			volume--;
+			System.out.println("Volume is decreased");
+			return volume;
+		}
+			
 	}
 }
