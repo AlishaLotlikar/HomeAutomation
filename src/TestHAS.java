@@ -1,13 +1,13 @@
 import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class TestHAS {
-	tv tvOn=new tv();
+public class TestHAS {
+	HasPanel control=new HasPanel();
 	@Test
-	public void switchOnTV() {
-		
-		tvOn.switchOnOffTV();
+	public void controlHAS() {
+		//fail("Not yet implemented");
+		control.displayDevices();
 	}
-	
+
 }

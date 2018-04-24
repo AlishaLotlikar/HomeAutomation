@@ -1,73 +1,34 @@
 import java.util.Scanner;
 
 public class tv {
-	boolean flag;
-	int volume;
-	int channel;
-	Scanner res=new Scanner(System.in);
-	String response=res.next();
-	public boolean isFlag() {
-		return flag;
-	}
-	public void setFlag(boolean flag) {
-		this.flag = flag;
-	}
-	public int getVolume() {
-		return volume;
-	}
-	public void setVolume(int volume) {
-		this.volume = volume;
-	}
-	public int getChannel() {
-		return channel;
-	}
-	
-	public void setChannel(int channel) {
-		this.channel = channel;
-	}
-	 public boolean switchOnOffTV() {
-		System.out.println("Turn tv on (y/n)?");
-		if(response=="y") {
-			System.out.println("Tv is on");
-			return flag=true;
+
+		int onFlag=1;
+		int channel=0;
+		int volume=0;
+		
+		public void turnOnTv(){
+			onFlag=0;
+			System.out.println("TV is Turned On");
 		}
-			
-		else{
-			System.out.println("Tv is off");
-			return flag=false;
+		public void turnOffTv(){
+			onFlag=1;
+			System.out.println("TV is Turned Off");
 		}
-		 
-	 }
-	
-	public int changeChannel(int channel) {
-		System.out.println("Change channel up? (y/n)?");
-		if(response=="y") {
+		public void channelUp(){
 			channel++;
-			System.out.println("channel increased");
-			return channel;
+			System.out.println("Channel: "+channel);
 		}
-			
-		else {
+		public void channelDown(){
 			channel--;
-			System.out.println("channel decreased");
-			return channel;
+			System.out.println("Channel: "+channel);
 		}
-			
-	}
-	
-	public int changeVolume(int volume) {
-		System.out.println("Change volume up? (y/n)?");
-		if(response=="y") {
+		public void volumeUp(){
 			volume++;
-			System.out.println("Volume is increased");
-			return volume;
+			System.out.println("Volume: "+volume);
 		}
-			
-		else {
+		public void volumeDown(){
 			volume--;
-			System.out.println("Volume is decreased");
-			return volume;
+			System.out.println("Volume: "+volume);
 		}
-			
-	}
+
 }

@@ -1,76 +1,33 @@
 import java.util.Scanner;
 
 public class WashingMachine {
-	boolean flag;
-	String drier;
-	String washer;
-	Scanner res= new Scanner(System.in);
-	public WashingMachine(boolean flag, String drier, String washer) {
-		super();
-		this.flag = flag;
-		this.drier = drier;
-		this.washer = washer;
-	}
-	String response=res.nextLine();
-	public boolean isFlag() {
-		return flag;
-	}
-	public void setFlag(boolean flag) {
-		this.flag = flag;
-	}
-	public String getDrier() {
-		return drier;
-	}
-	public void setDrier(String drier) {
-		this.drier = drier;
-	}
-	public String getWasher() {
-		return washer;
-	}
-	public void setWasher(String washer) {
-		this.washer = washer;
-	}
+	int onFlag=1;
+	int washer=0;
+	int drier=0;
 	
-	public boolean switchOnOffWM(boolean flag) {
-		System.out.println("Turn washing machine on (y/n)?");
-		
-		if(response=="y") {		
-			System.out.println("Washing machine is turned on");
-			return flag=true;
-		}
-		else {		
-			System.out.println("Washing machine is off");
-			return flag=false;
-		}
-		 
-	 }
-	
-	public String startDrier() {
-		Scanner dry=new Scanner(System.in);
-		String input=dry.nextLine();
-		System.out.println("Start drier? (y/n)?");
-		if(input=="y") {
-			System.out.println("Drier is on");
-			return drier;
-		}
-		else {
-			System.out.println("Drier is off");
-			return drier;
-		}
-			
+	public void turnOnWM(){
+		onFlag=0;
+		System.out.println("Washing Machine is Turned On");
 	}
-	public String startWasher() {
-		Scanner wash=new Scanner(System.in);
-		String input=wash.nextLine();
-		System.out.println("Start washer? (y/n)?");
-		if(input=="y") {
-			System.out.println("washer is on");
-			return washer;
-		}
-		else {
-			System.out.println("washer is off");
-			return washer;
-		}
-			
+	public void turnOffWM(){
+		onFlag=1;
+		System.out.println("Washing Machine is Turned On");
 	}
+	public void washerOn(){
+		washer=1;
+		System.out.println("Washer is on");
+	}
+	public void washeroff(){
+		washer=0;
+		System.out.println("Washer is off");
+	}
+	public void drierOn(){
+		drier=1;
+		System.out.println("Drier is on");
+	}
+	public void drierOff(){
+		drier=1;
+		System.out.println("Drier is off");
+	}
+
 }
